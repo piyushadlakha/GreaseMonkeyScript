@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Kite Bucket Helper
-// @downloadURL  
-// @updateURL    
+// @downloadURL  https://github.com/piyushadlakha/GreaseMonkeyScript/blob/main/KiteBucketHelper.user.js
+// @updateURL    https://github.com/piyushadlakha/GreaseMonkeyScript/blob/main/KiteBucketHelper.user.js
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!
