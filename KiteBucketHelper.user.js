@@ -3,7 +3,7 @@
 // @downloadURL  https://github.com/piyushadlakha/GreaseMonkeyScript/blob/main/KiteBucketHelper.user.js
 // @updateURL    https://github.com/piyushadlakha/GreaseMonkeyScript/blob/main/KiteBucketHelper.user.js
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      2
 // @description  try to take over the world!
 // @author       You
 // @match        https://kite.zerodha.com/orders/baskets
