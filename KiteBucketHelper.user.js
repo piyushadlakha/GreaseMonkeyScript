@@ -3,7 +3,7 @@
 // @downloadURL  https://github.com/piyushadlakha/GreaseMonkeyScript/raw/refs/heads/main/KiteBucketHelper.user.js
 // @updateURL    https://github.com/piyushadlakha/GreaseMonkeyScript/raw/refs/heads/main/KiteBucketHelper.user.js
 // @namespace    http://tampermonkey.net/
-// @version      2
+// @version      3
 // @description  try to take over the world!
 // @author       You
 // @match        https://kite.zerodha.com/orders/baskets
@@ -255,7 +255,7 @@
 
             var qtyDiffElement = document.createElement('input');
             qtyDiffElement.type = 'input';
-            qtyDiffElement.value = 10;
+            qtyDiffElement.value = 2;
             qtyDiffElement.id = 'QtyValue';
             qtyDiffElement.style.margin = '10px'
             qtyDiffElement.style.height = '35px'
