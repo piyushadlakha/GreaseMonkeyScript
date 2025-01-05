@@ -242,7 +242,7 @@
 
             var atmDiffElement = document.createElement('input');
             atmDiffElement.type = 'input';
-            atmDiffElement.value = 700;
+            atmDiffElement.value = 0;
             atmDiffElement.id = 'ATMDiffValue';
             atmDiffElement.style.margin = '10px'
             atmDiffElement.style.height = '35px'
@@ -255,7 +255,7 @@
 
             var qtyDiffElement = document.createElement('input');
             qtyDiffElement.type = 'input';
-            qtyDiffElement.value = 3;
+            qtyDiffElement.value = 1;
             qtyDiffElement.id = 'QtyValue';
             qtyDiffElement.style.margin = '10px'
             qtyDiffElement.style.height = '35px'
