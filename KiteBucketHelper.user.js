@@ -3,10 +3,10 @@
 // @downloadURL  https://github.com/piyushadlakha/GreaseMonkeyScript/raw/refs/heads/main/KiteBucketHelper.user.js
 // @updateURL    https://github.com/piyushadlakha/GreaseMonkeyScript/raw/refs/heads/main/KiteBucketHelper.user.js
 // @namespace    http://tampermonkey.net/
-// @version      4
+// @version      5
 // @description  try to take over the world!
 // @author       You
-// @match        https://kite.zerodha.com/orders/baskets
+// @match        https://kite.zerodha.com/orders/baskets*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=zerodha.com
 // @grant        GM.xmlHttpRequest
 // ==/UserScript==
@@ -62,7 +62,7 @@
                                     var maxLossPerShare = 300
                                     var currentOptionPriceString = node.querySelector('#myPriceDiv').innerText;
                                     var currentOptionPrice = parseFloat(currentOptionPriceString.match(/[\d.]+/)[0]);
-                                    var stopLossOptionPrice = maxLossPerShare + currentOptionPrice
+                                    var stopLossOptionPrice = 40
                                     var stopLossPercentValue = Math.round(stopLossOptionPrice*100/currentOptionPrice)
 
                                     var radioButtonIndex = isAmo ? 1 : 0
@@ -303,7 +303,15 @@
                 bucketElements[basketIndex].click();
                 setTimeout(function() {
                     var footerClickButtons = document.querySelectorAll('.modal-footer button')
-                    footerClickButtons[footerClickButtons.length-1].click()
+                    if(new URL(window.location.href).searchParams.get("executeCurrent") === "true") {
+                        footerClickButtons[footerClickButtons.length-2].click()
+                        setTimeout(function() {
+                            var newFooterClickButtons = document.querySelectorAll('.modal-footer button')
+                            //newFooterClickButtons[newFooterClickButtons.length-2].click()
+                        }, 500)
+                    } else {
+                        footerClickButtons[footerClickButtons.length-1].click()
+                    }
                     document.querySelector('#AutoAddToggle').click();
                 }, 5000)
             }, 200)
@@ -381,6 +389,7 @@
         if (rows.length > 0) {
             setTimeout(function() {
                 rows[0].dispatchEvent(new MouseEvent('mouseenter'))
+                rows[1].dispatchEvent(new MouseEvent('mouseenter'))
             }, 500)
         }
     }
@@ -388,8 +397,8 @@
     function createPeCeFields() {
 
         // Find the element you want to click on (replace 'elementSelector' with the actual CSS selector)
-        var watchListPrices = document.querySelectorAll('.instruments .last-price')
-        var watchListNames = document.querySelectorAll('.instruments .nice-name')
+        var watchListPrices = document.querySelectorAll('.items .last-price')
+        var watchListNames = document.querySelectorAll('.items .name')
 
 
         //console.log(atmStrikePrice)
