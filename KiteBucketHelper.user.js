@@ -62,7 +62,7 @@
                                     var maxLossPerShare = 300
                                     var currentOptionPriceString = node.querySelector('#myPriceDiv').innerText;
                                     var currentOptionPrice = parseFloat(currentOptionPriceString.match(/[\d.]+/)[0]);
-                                    var stopLossOptionPrice = 40
+                                    var stopLossOptionPrice = 50
                                     var stopLossPercentValue = Math.round(stopLossOptionPrice*100/currentOptionPrice)
 
                                     var radioButtonIndex = isAmo ? 1 : 0
