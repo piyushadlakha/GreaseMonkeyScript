@@ -307,7 +307,13 @@
                         footerClickButtons[footerClickButtons.length-2].click()
                         setTimeout(function() {
                             var newFooterClickButtons = document.querySelectorAll('.modal-footer button')
-                            //newFooterClickButtons[newFooterClickButtons.length-2].click()
+                            newFooterClickButtons[newFooterClickButtons.length-2].click()
+                        }, 500)
+                    } else if(new URL(window.location.href).searchParams.get("executeCurrent") === "false") {
+                        footerClickButtons[footerClickButtons.length-2].click()
+                        setTimeout(function() {
+                            var newFooterClickButtons = document.querySelectorAll('.modal-footer button')
+                            newFooterClickButtons[newFooterClickButtons.length-1].click()
                         }, 500)
                     } else {
                         footerClickButtons[footerClickButtons.length-1].click()
