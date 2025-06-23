@@ -42,6 +42,7 @@
                                     var bucketName = getBucketName()
                                     var isAmo = bucketName.includes("AMO")
                                     var isNifty50 = bucketName.startsWith("NIFTY 50")
+                                    var isSensex = bucketName.startsWith("SENSEX")
                                     if (isAmo) {
                                         var amoNode = node.querySelectorAll('.variety .type.su-radio-wrap')[2].querySelector('input')
                                         amoNode.click() // For AMO
@@ -63,6 +64,9 @@
                                     var currentOptionPriceString = node.querySelector('#myPriceDiv').innerText;
                                     var currentOptionPrice = parseFloat(currentOptionPriceString.match(/[\d.]+/)[0]);
                                     var stopLossOptionPrice = 50
+                                    if (isSensex) {
+                                        stopLossOptionPrice = 150
+                                    }
                                     var stopLossPercentValue = Math.round(stopLossOptionPrice*100/currentOptionPrice)
 
                                     var radioButtonIndex = isAmo ? 1 : 0
